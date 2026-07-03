@@ -237,7 +237,7 @@ nav{
 /* ===== REGISTRO DE OPORTUNIDADES ===== */
 .reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:8px}
 .reg-card{
-  background:white;border-radius:14px;padding:36px 28px;
+  background:white;border-radius:14px;padding:24px 22px;
   border-top:4px solid var(--green-mid);
   box-shadow:0 4px 24px rgba(0,0,0,.06);
   transition:all .6s
@@ -299,18 +299,18 @@ nav{
 .audio-close{color:rgba(255,255,255,.35);font-size:14px}
 
 /* ===== SECTION BASE ===== */
-.section{padding:108px 88px}
+.section{padding:68px 88px}
 .s-label{
   font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:14px
+  color:var(--orange);margin-bottom:10px
 }
 .s-title{
-  font-size:clamp(36px,4.5vw,60px);font-weight:900;line-height:1.05;
-  margin-bottom:20px;letter-spacing:-1.5px
+  font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1.05;
+  margin-bottom:14px;letter-spacing:-1.5px
 }
 .s-desc{
-  font-size:18px;line-height:1.75;color:var(--text-mid);
-  max-width:660px;margin-bottom:64px
+  font-size:16px;line-height:1.65;color:var(--text-mid);
+  max-width:660px;margin-bottom:36px
 }
 
 /* ===== CONCEITO ===== */
@@ -320,7 +320,7 @@ nav{
 }
 .c-card{
   background:var(--green-pale);border-radius:14px;
-  padding:40px 30px;border-top:4px solid var(--green-mid);
+  padding:26px 22px;border-top:4px solid var(--green-mid);
   transition:all .6s cubic-bezier(.22,.68,0,1.21);
   opacity:0;transform:translateY(28px)
 }
@@ -342,7 +342,7 @@ nav{
 .pt-card{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;padding:30px 20px;text-align:center;
+  border-radius:14px;padding:20px 16px;text-align:center;
   transition:all .4s;opacity:0;transform:scale(.88)
 }
 .pt-card.in{opacity:1;transform:scale(1)}
@@ -351,8 +351,8 @@ nav{
   border-color:var(--orange);transform:translateY(-6px)
 }
 .pt-val{
-  font-size:58px;font-weight:900;color:var(--orange);
-  line-height:1;margin-bottom:10px
+  font-size:42px;font-weight:900;color:var(--orange);
+  line-height:1;margin-bottom:8px
 }
 .pt-name{font-size:13px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
 .pt-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px}
@@ -452,8 +452,8 @@ nav{
   border:1px solid rgba(205,127,50,.28)
 }
 /* Foto do prêmio */
-.a-photo{width:100%;height:178px;overflow:hidden;position:relative;flex-shrink:0}
-.a-card.gold .a-photo{height:210px}
+.a-photo{width:100%;height:145px;overflow:hidden;position:relative;flex-shrink:0}
+.a-card.gold .a-photo{height:168px}
 .a-photo img{
   width:100%;height:100%;object-fit:cover;display:block;
   filter:brightness(.78) saturate(1.1);
@@ -989,26 +989,6 @@ footer{
   <p class="award-cat">⭐ Leads Qualificados · 25% em 30 dias &nbsp;—&nbsp; Premiação Principal</p>
   <div class="podium">
 
-    <!-- 2º lugar -->
-    <div class="a-card silver">
-      <div class="a-photo">
-        <div class="a-photo-grid g2">
-          <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
-          <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad Ergonômico" loading="lazy"/>
-        </div>
-        <div class="a-photo-overlay"></div>
-        <div class="a-badge silver-badge">2</div>
-      </div>
-      <div class="a-body">
-        <span class="a-place silver-place">2º Lugar</span>
-        <ul class="a-prize-list">
-          <li><strong>01 Mouse sem fio</strong></li>
-          <li><strong>01 Mousepad</strong></li>
-          <li><strong>Medalha</strong></li>
-        </ul>
-      </div>
-    </div>
-
     <!-- 1º lugar — troféu real TR -->
     <div class="a-card gold">
       <div class="a-photo">
@@ -1026,6 +1006,26 @@ footer{
           <li><strong>01 Tela Portátil</strong></li>
           <li><strong>01 Mochila Thomson Reuters</strong></li>
           <li><strong>Troféu Call Blitz</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2º lugar -->
+    <div class="a-card silver">
+      <div class="a-photo">
+        <div class="a-photo-grid g2">
+          <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
+          <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad Ergonômico" loading="lazy"/>
+        </div>
+        <div class="a-photo-overlay"></div>
+        <div class="a-badge silver-badge">2</div>
+      </div>
+      <div class="a-body">
+        <span class="a-place silver-place">2º Lugar</span>
+        <ul class="a-prize-list">
+          <li><strong>01 Mouse sem fio</strong></li>
+          <li><strong>01 Mousepad</strong></li>
+          <li><strong>Medalha</strong></li>
         </ul>
       </div>
     </div>
@@ -1051,6 +1051,21 @@ footer{
   <p class="award-cat">📊 Leads Gerados · Quantidade Total</p>
   <div class="podium">
 
+    <!-- 1º lugar — mochila -->
+    <div class="a-card gold">
+      <div class="a-photo">
+        <img src="2026/Fotos/mochila_notebook.webp" alt="Mochila Thomson Reuters" loading="lazy"/>
+        <div class="a-photo-overlay"></div>
+        <div class="a-badge gold-badge">1</div>
+      </div>
+      <div class="a-body">
+        <span class="a-place gold-place">★ 1º Lugar</span>
+        <ul class="a-prize-list">
+          <li><strong>01 Mochila Thomson Reuters</strong></li>
+        </ul>
+      </div>
+    </div>
+
     <!-- 2º lugar -->
     <div class="a-card silver">
       <div class="a-photo">
@@ -1066,21 +1081,6 @@ footer{
         <ul class="a-prize-list">
           <li><strong>01 Mouse sem fio</strong></li>
           <li><strong>01 Mousepad</strong></li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- 1º lugar — mochila -->
-    <div class="a-card gold">
-      <div class="a-photo">
-        <img src="2026/Fotos/mochila_notebook.webp" alt="Mochila Thomson Reuters" loading="lazy"/>
-        <div class="a-photo-overlay"></div>
-        <div class="a-badge gold-badge">1</div>
-      </div>
-      <div class="a-body">
-        <span class="a-place gold-place">★ 1º Lugar</span>
-        <ul class="a-prize-list">
-          <li><strong>01 Mochila Thomson Reuters</strong></li>
         </ul>
       </div>
     </div>
@@ -1322,7 +1322,7 @@ window.addEventListener('scroll',()=>{
    ============================================= */
 (function(){
   const sections=['hero','conceito','pontuacao','registro','praticas','prospects','premiacao','atencao','recados'];
-  const DWELL=7000; // ms per section
+  const DWELL=13000; // ms per section — ~2min total (9 seções × 13s)
   let idx=0, timer=null, progTimer=null, paused=false, lastManual=0;
 
   const prog=document.getElementById('asProg');
@@ -1390,17 +1390,19 @@ const synth=window.speechSynthesis;
 const script=`
 Bem-vindos ao Call Blitz 2026 da Thomson Reuters!
 
-O Call Blitz é uma ação intensiva de ligações, com foco total em gerar novas oportunidades em um único turno de trabalho. Toda a equipe atua 100% dedicada aos contatos, sem outras tarefas.
+O Call Blitz é uma ação intensiva de ligações. Toda a equipe atua 100% dedicada, sem outras tarefas, com foco total em gerar novas oportunidades em um único turno.
 
-Sobre a pontuação: Tax One, DFe, IDT, GTM e Legal One valem 3 pontos cada. Agro, CPG, Multisector e New Logo valem 5 pontos. General Business vale 2 pontos. Pontuações são acumulativas.
+Pontuação: Tax One, DFe, IDT, GTM e Legal One valem 3 pontos. Agro, CPG, Multisector e New Logo valem 5 pontos. General Business vale 2. Priorize os produtos de maior valor.
 
-Atenção ao registro: todas as oportunidades devem ser inseridas no Salesforce com o código PARTNERS BR CORPORATE CALL BLITZ, no campo Descrição, antes de enviar para aprovação. Sem esse código, a oportunidade não será contabilizada.
+Registro obrigatório: insira todas as oportunidades no Salesforce com o código PARTNERS BR CORPORATE CALL BLITZ, no campo Descrição. Sem esse código, a oportunidade não é contabilizada.
 
-Cadência mínima de 3 toques por lead, alternando telefone, e-mail e WhatsApp. As oportunidades são acompanhadas por 30 dias e devem atingir 25%. Cancelamentos geram penalidade de menos 3 pontos.
+Boas práticas: mantenha cadência mínima de 3 toques por lead, alternando telefone, e-mail e WhatsApp. Oportunidades são acompanhadas por 30 dias e precisam atingir 25% de avanço.
 
-Premiação principal: primeiro lugar recebe Tela Portátil, Mochila Thomson Reuters e Troféu. Segundo lugar, Mouse sem fio e Mousepad. Terceiro lugar, Caneca Térmica.
+Na prospecção, foque em contatos com perfil decisor: Budget, Authority, Need e Timeline definidos. Evite leads sem potencial real de fechamento.
 
-Boas ligações! Juntos, vamos superar as metas!
+Premiação: na categoria Leads Qualificados, primeiro lugar recebe Tela Portátil, Mochila Thomson Reuters e Troféu. Segundo lugar, Mouse e Mousepad. Terceiro, Caneca Térmica. Na categoria Quantidade, primeiro lugar recebe Mochila Thomson Reuters.
+
+Foco, disciplina e cadência são os pilares do sucesso hoje. Boas ligações! Juntos, vamos superar as metas!
 `;
 
 function toggleNarration(){
