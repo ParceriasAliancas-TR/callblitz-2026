@@ -237,7 +237,7 @@ nav{
 /* ===== REGISTRO DE OPORTUNIDADES ===== */
 .reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:8px}
 .reg-card{
-  background:white;border-radius:14px;padding:24px 22px;
+  background:white;border-radius:14px;padding:18px 18px;
   border-top:4px solid var(--green-mid);
   box-shadow:0 4px 24px rgba(0,0,0,.06);
   transition:all .6s
@@ -299,18 +299,18 @@ nav{
 .audio-close{color:rgba(255,255,255,.35);font-size:14px}
 
 /* ===== SECTION BASE ===== */
-.section{padding:68px 88px}
+.section{padding:48px 88px}
 .s-label{
   font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:10px
+  color:var(--orange);margin-bottom:8px
 }
 .s-title{
-  font-size:clamp(28px,3.5vw,48px);font-weight:900;line-height:1.05;
-  margin-bottom:14px;letter-spacing:-1.5px
+  font-size:clamp(24px,3vw,42px);font-weight:900;line-height:1.05;
+  margin-bottom:10px;letter-spacing:-1.5px
 }
 .s-desc{
-  font-size:16px;line-height:1.65;color:var(--text-mid);
-  max-width:660px;margin-bottom:36px
+  font-size:15px;line-height:1.6;color:var(--text-mid);
+  max-width:660px;margin-bottom:24px
 }
 
 /* ===== CONCEITO ===== */
@@ -320,15 +320,15 @@ nav{
 }
 .c-card{
   background:var(--green-pale);border-radius:14px;
-  padding:26px 22px;border-top:4px solid var(--green-mid);
+  padding:18px 16px;border-top:4px solid var(--green-mid);
   transition:all .6s cubic-bezier(.22,.68,0,1.21);
   opacity:0;transform:translateY(28px)
 }
 .c-card.in{opacity:1;transform:translateY(0)}
 .c-card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(26,74,46,.15)}
-.c-icon{font-size:42px;margin-bottom:20px;display:block}
-.c-card h3{font-size:18px;font-weight:700;color:var(--green-dark);margin-bottom:10px}
-.c-card p{font-size:15px;line-height:1.65;color:var(--text-mid)}
+.c-icon{font-size:30px;margin-bottom:10px;display:block}
+.c-card h3{font-size:15px;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.c-card p{font-size:13px;line-height:1.55;color:var(--text-mid)}
 
 /* ===== PONTUAÇÃO ===== */
 #pontuacao{background:var(--bg-dark);color:white}
@@ -337,25 +337,25 @@ nav{
 .pts-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:14px;margin-bottom:48px
+  gap:8px;margin-bottom:16px
 }
 .pt-card{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:14px;padding:20px 16px;text-align:center;
+  border-radius:12px;padding:14px 10px;text-align:center;
   transition:all .4s;opacity:0;transform:scale(.88)
 }
 .pt-card.in{opacity:1;transform:scale(1)}
 .pt-card:hover{
   background:rgba(227,82,5,.12);
-  border-color:var(--orange);transform:translateY(-6px)
+  border-color:var(--orange);transform:translateY(-4px)
 }
 .pt-val{
-  font-size:42px;font-weight:900;color:var(--orange);
-  line-height:1;margin-bottom:8px
+  font-size:32px;font-weight:900;color:var(--orange);
+  line-height:1;margin-bottom:5px
 }
-.pt-name{font-size:13px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
-.pt-sub{font-size:11px;color:rgba(255,255,255,.4);margin-top:4px}
+.pt-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
+.pt-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px}
 .pt-card.wide{grid-column:span 2}
 .code-bar{
   background:rgba(0,0,0,.45);
@@ -539,15 +539,15 @@ nav{
 #atencao{background:#fff9f5;border-top:4px solid var(--orange)}
 .at-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .at-card{
-  background:white;border-radius:14px;padding:36px 30px;
+  background:white;border-radius:14px;padding:20px 22px;
   border-left:4px solid var(--orange);
   box-shadow:0 4px 24px rgba(227,82,5,.07);
   opacity:0;transform:translateY(22px);transition:all .55s
 }
 .at-card.in{opacity:1;transform:translateY(0)}
-.at-icon{font-size:36px;margin-bottom:16px}
-.at-card h3{font-size:18px;font-weight:700;margin-bottom:12px}
-.at-card p{font-size:15px;color:var(--text-mid);line-height:1.65}
+.at-icon{font-size:28px;margin-bottom:10px}
+.at-card h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.at-card p{font-size:13px;color:var(--text-mid);line-height:1.55}
 .penalty{
   background:#fff0e8;border:2px solid var(--orange);
   border-radius:8px;padding:14px 20px;margin-top:16px;
@@ -559,16 +559,16 @@ nav{
 .rec-list{list-style:none;counter-reset:rec}
 .rec-item{
   counter-increment:rec;
-  display:flex;gap:28px;align-items:flex-start;
-  padding:26px 0;border-bottom:1px solid #f0f0f0;
+  display:flex;gap:20px;align-items:flex-start;
+  padding:14px 0;border-bottom:1px solid #f0f0f0;
   opacity:0;transform:translateX(-22px);transition:all .55s
 }
 .rec-item.in{opacity:1;transform:translateX(0)}
 .rec-num{
-  font-size:36px;font-weight:900;color:var(--orange);opacity:.25;
-  min-width:52px;line-height:1.1;flex-shrink:0
+  font-size:26px;font-weight:900;color:var(--orange);opacity:.25;
+  min-width:40px;line-height:1.1;flex-shrink:0
 }
-.rec-txt{font-size:17px;color:var(--text-mid);line-height:1.75;padding-top:6px}
+.rec-txt{font-size:14px;color:var(--text-mid);line-height:1.6;padding-top:3px}
 .rec-txt strong{color:var(--text)}
 
 /* ===== FOOTER ===== */
@@ -1321,27 +1321,37 @@ window.addEventListener('scroll',()=>{
    3b. AUTO-SCROLL
    ============================================= */
 (function(){
-  const sections=['hero','conceito','pontuacao','registro','praticas','prospects','premiacao','atencao','recados'];
-  const DWELL=13000; // ms per section — ~2min total (9 seções × 13s)
+  // Timing calibrado com a locução (~2 min total)
+  const sections=[
+    {id:'hero',      dwell:7000},
+    {id:'conceito',  dwell:13000},
+    {id:'pontuacao', dwell:20000},
+    {id:'registro',  dwell:15000},
+    {id:'praticas',  dwell:12000},
+    {id:'prospects', dwell:10000},
+    {id:'premiacao', dwell:14000},
+    {id:'atencao',   dwell:8000},
+    {id:'recados',   dwell:8000}
+  ];
   let idx=0, timer=null, progTimer=null, paused=false, lastManual=0;
 
   const prog=document.getElementById('asProg');
 
   function goTo(i){
     idx=i;
-    const el=document.getElementById(sections[i]);
+    const el=document.getElementById(sections[i].id);
     if(!el) return;
     el.scrollIntoView({behavior:'smooth'});
     startProgress();
   }
 
   function startProgress(){
+    const dwell=sections[idx].dwell;
     prog.style.transition='none';
     prog.style.width='0%';
     clearTimeout(timer);clearTimeout(progTimer);
-    // tiny delay so transition resets
     setTimeout(()=>{
-      prog.style.transition='width '+DWELL+'ms linear';
+      prog.style.transition='width '+dwell+'ms linear';
       prog.style.width='100%';
     },30);
     timer=setTimeout(()=>{
@@ -1349,7 +1359,7 @@ window.addEventListener('scroll',()=>{
         idx=(idx+1)%sections.length;
         goTo(idx);
       }
-    },DWELL);
+    },dwell);
   }
 
   // Detect manual scroll → pause 12s then resume
@@ -1362,10 +1372,9 @@ window.addEventListener('scroll',()=>{
     prog.style.width='0%';
     clearTimeout(timer);clearTimeout(progTimer);
     progTimer=setTimeout(()=>{
-      // find current section
       let best=0,bestOff=Infinity;
-      sections.forEach((id,i)=>{
-        const el=document.getElementById(id);
+      sections.forEach((s,i)=>{
+        const el=document.getElementById(s.id);
         if(!el) return;
         const off=Math.abs(el.getBoundingClientRect().top);
         if(off<bestOff){bestOff=off;best=i;}
@@ -1388,22 +1397,23 @@ let speaking=false;
 const synth=window.speechSynthesis;
 
 const script=`
-Bem-vindos ao Call Blitz 2026 da Thomson Reuters!
+Pessoal, bem-vindos! Hoje é dia de Call Blitz 2026 da Thomson Reuters. Vamos nessa!
 
-O Call Blitz é uma ação intensiva de ligações. Toda a equipe atua 100% dedicada, sem outras tarefas, com foco total em gerar novas oportunidades em um único turno.
+O Call Blitz é simples: a gente para tudo e foca 100% em ligações durante um único turno. Sem outras tarefas, sem reuniões paralelas. É foco total em contatos, em oportunidades novas. Um dia inteiro dedicado a isso.
 
-Pontuação: Tax One, DFe, IDT, GTM e Legal One valem 3 pontos. Agro, CPG, Multisector e New Logo valem 5 pontos. General Business vale 2. Priorize os produtos de maior valor.
+No sistema de pontuação, cada solução vale diferente. Tax One, DFe, IDT, GTM e Legal One valem 3 pontos cada. Mas se você gerar oportunidades em Agro, CPG, Multisector ou New Logo... são 5 pontos! E General Business vale 2. Então, quando tiver a opção, vai nos produtos que valem mais.
 
-Registro obrigatório: insira todas as oportunidades no Salesforce com o código PARTNERS BR CORPORATE CALL BLITZ, no campo Descrição. Sem esse código, a oportunidade não é contabilizada.
+Agora, atenção — isso aqui é crítico. Toda oportunidade precisa entrar no Salesforce com exatamente esse código no campo Descrição: PARTNERS BR CORPORATE CALL BLITZ. Não colocou o código? Não vai contar. Então não esquece!
 
-Boas práticas: mantenha cadência mínima de 3 toques por lead, alternando telefone, e-mail e WhatsApp. Oportunidades são acompanhadas por 30 dias e precisam atingir 25% de avanço.
+Na abordagem, mantenha pelo menos 3 toques por lead, combinando telefone, e-mail e WhatsApp. A oportunidade precisa ter 25% de progresso em 30 dias pra entrar na apuração. E cuidado: oportunidade cancelada desconta 3 pontos automaticamente.
 
-Na prospecção, foque em contatos com perfil decisor: Budget, Authority, Need e Timeline definidos. Evite leads sem potencial real de fechamento.
+Para prospectar bem, foque em decisores com orçamento definido e necessidade clara. Não gaste energia com lead sem potencial. Hoje, qualidade vale mais do que quantidade.
 
-Premiação: na categoria Leads Qualificados, primeiro lugar recebe Tela Portátil, Mochila Thomson Reuters e Troféu. Segundo lugar, Mouse e Mousepad. Terceiro, Caneca Térmica. Na categoria Quantidade, primeiro lugar recebe Mochila Thomson Reuters.
+E a premiação tá incrível esse ano! Na categoria Leads Qualificados: primeiro lugar leva Tela Portátil, Mochila Thomson Reuters e o Troféu. Segundo lugar, Mouse sem fio e Mousepad. Terceiro, Caneca Térmica. Na categoria Quantidade, o primeiro recebe Mochila Thomson Reuters.
 
-Foco, disciplina e cadência são os pilares do sucesso hoje. Boas ligações! Juntos, vamos superar as metas!
+É isso, pessoal! Agora é hora de mostrar resultado. Foco, cadência, e bora superar as metas juntos!
 `;
+
 
 function toggleNarration(){
   if(speaking){
@@ -1417,7 +1427,7 @@ function toggleNarration(){
     }
     const utt=new SpeechSynthesisUtterance(script);
     utt.lang='pt-BR';
-    utt.rate=.88;
+    utt.rate=.94;
     utt.pitch=1.05;
     utt.volume=1;
 
