@@ -1408,10 +1408,9 @@ window.addEventListener('scroll',()=>{
 /* =============================================
    4. NARRAÇÃO SINCRONIZADA — ÁUDIO MP3 (Francisca Neural)
    Para trocar a locução, substitua assets/narration.mp3 pela sua gravação.
-   Os cuepoints abaixo marcam quando cada slide deve aparecer.
+   Cuepoints = timestamps exatos de quando cada slide deve aparecer.
    ============================================= */
 
-// Timestamps gerados automaticamente pelo edge-tts (SentenceBoundary)
 const cuepoints=[
   {time:0.10,  id:'hero'},
   {time:3.83,  id:'conceito'},
@@ -1427,38 +1426,53 @@ const cuepoints=[
 const narr=new Audio('assets/narration.mp3');
 narr.preload='auto';
 
-let lastCueIdx=-1;
+let _cueTimers=[];
 
-// Sincroniza slide com a fala — roda a cada ~250ms
-narr.addEventListener('timeupdate',()=>{
-  if(!window._scroll) return;
-  const t=narr.currentTime;
-  let active=-1;
-  for(let i=cuepoints.length-1;i>=0;i--){
-    if(t>=cuepoints[i].time){active=i;break;}
-  }
-  if(active!==-1 && active!==lastCueIdx){
-    lastCueIdx=active;
-    const {sections,goTo}=window._scroll;
-    const si=sections.findIndex(s=>s.id===cuepoints[active].id);
-    if(si!==-1) goTo(si);
-  }
-});
+function _clearCues(){
+  _cueTimers.forEach(t=>clearTimeout(t));
+  _cueTimers=[];
+}
+
+function _scrollTo(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth'});
+}
+
+// Agenda cada transição de slide com setTimeout exato
+function _scheduleCues(){
+  _clearCues();
+  const now=narr.currentTime;
+
+  // Scroll imediato para o slide atual
+  const cur=[...cuepoints].reverse().find(cp=>cp.time<=now+0.3);
+  if(cur) _scrollTo(cur.id);
+
+  // Agendar os próximos
+  cuepoints.forEach(cp=>{
+    const delay=(cp.time-now)*1000;
+    if(delay>50){
+      _cueTimers.push(setTimeout(()=>{ _scrollTo(cp.id); }, delay));
+    }
+  });
+}
 
 narr.onplay=()=>{
-  if(window._scroll) window._scroll.pause();  // áudio controla navegação
-  lastCueIdx=-1;
+  if(window._scroll) window._scroll.pause();
+  _scheduleCues();
   updateAudioUI(true);
 };
 narr.onpause=()=>{
+  _clearCues();
   updateAudioUI(false);
-  if(window._scroll) window._scroll.resume(); // devolve controle ao auto-scroll
-};
-narr.onended=()=>{
-  updateAudioUI(false);
-  lastCueIdx=-1;
   if(window._scroll) window._scroll.resume();
 };
+narr.onended=()=>{
+  _clearCues();
+  narr.currentTime=0;
+  updateAudioUI(false);
+  if(window._scroll) window._scroll.resume();
+};
+narr.onseeked=()=>{ if(!narr.paused) _scheduleCues(); };
 narr.onerror=()=>updateAudioUI(false);
 
 function toggleNarration(){
