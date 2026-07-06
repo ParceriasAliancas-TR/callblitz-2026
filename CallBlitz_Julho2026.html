@@ -1186,7 +1186,7 @@ footer{
   </div>
   <div class="foot-right">
     <div class="foot-title">Call Blitz · Julho/2026</div>
-    <div class="foot-sub">Canais, Alianças e Enablement · CPO</div>
+    <div class="foot-sub">Parcerias e Alianças Thomson Reuters</div>
   </div>
 </footer>
 
@@ -1387,30 +1387,89 @@ window.addEventListener('scroll',()=>{
 
   // Start after 3s
   setTimeout(()=>startProgress(),3000);
+
+  // Expose para controle externo (narração sincronizada)
+  window._scroll={
+    sections,
+    goTo,
+    pause(){
+      paused=true;
+      clearTimeout(timer);clearTimeout(progTimer);
+      prog.style.transition='width .3s';prog.style.width='0%';
+    },
+    resume(){
+      paused=false;
+      startProgress();
+    }
+  };
 })();
 
 
 /* =============================================
-   4. NARRAÇÃO — ÁUDIO MP3 (Francisca Neural)
+   4. NARRAÇÃO SINCRONIZADA — ÁUDIO MP3 (Francisca Neural)
    Para trocar a locução, substitua assets/narration.mp3 pela sua gravação.
+   Os cuepoints abaixo marcam quando cada slide deve aparecer.
    ============================================= */
+
+// Timestamps gerados automaticamente pelo edge-tts (SentenceBoundary)
+const cuepoints=[
+  {time:0.10,  id:'hero'},
+  {time:3.83,  id:'conceito'},
+  {time:19.71, id:'pontuacao'},
+  {time:38.99, id:'registro'},
+  {time:51.89, id:'praticas'},
+  {time:67.94, id:'prospects'},
+  {time:78.64, id:'premiacao'},
+  {time:95.85, id:'atencao'},
+  {time:103.21,id:'recados'},
+];
+
 const narr=new Audio('assets/narration.mp3');
 narr.preload='auto';
+
+let lastCueIdx=-1;
+
+// Sincroniza slide com a fala — roda a cada ~250ms
+narr.addEventListener('timeupdate',()=>{
+  if(!window._scroll) return;
+  const t=narr.currentTime;
+  let active=-1;
+  for(let i=cuepoints.length-1;i>=0;i--){
+    if(t>=cuepoints[i].time){active=i;break;}
+  }
+  if(active!==-1 && active!==lastCueIdx){
+    lastCueIdx=active;
+    const {sections,goTo}=window._scroll;
+    const si=sections.findIndex(s=>s.id===cuepoints[active].id);
+    if(si!==-1) goTo(si);
+  }
+});
+
+narr.onplay=()=>{
+  if(window._scroll) window._scroll.pause();  // áudio controla navegação
+  lastCueIdx=-1;
+  updateAudioUI(true);
+};
+narr.onpause=()=>{
+  updateAudioUI(false);
+  if(window._scroll) window._scroll.resume(); // devolve controle ao auto-scroll
+};
+narr.onended=()=>{
+  updateAudioUI(false);
+  lastCueIdx=-1;
+  if(window._scroll) window._scroll.resume();
+};
+narr.onerror=()=>updateAudioUI(false);
 
 function toggleNarration(){
   if(!narr.paused){
     narr.pause();
-    updateAudioUI(false);
   } else {
     narr.play().catch(()=>{
       alert('Não foi possível reproduzir o áudio. Verifique se o arquivo assets/narration.mp3 existe.');
     });
-    updateAudioUI(true);
   }
 }
-
-narr.onended=()=>updateAudioUI(false);
-narr.onerror=()=>{ updateAudioUI(false); };
 
 function updateAudioUI(on){
   const fl=document.getElementById('audio-float');
