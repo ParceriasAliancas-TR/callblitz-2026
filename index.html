@@ -304,39 +304,39 @@ nav{
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  padding:88px 88px 20px;
+  justify-content:flex-start;
+  padding:84px 88px 16px;
   overflow:hidden
 }
 .s-label{
-  font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:6px
+  font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:4px
 }
 .s-title{
-  font-size:clamp(20px,2.4vw,34px);font-weight:900;line-height:1.05;
-  margin-bottom:8px;letter-spacing:-1.2px
+  font-size:clamp(18px,2.2vw,30px);font-weight:900;line-height:1.05;
+  margin-bottom:5px;letter-spacing:-1px
 }
 .s-desc{
-  font-size:13.5px;line-height:1.5;color:var(--text-mid);
-  max-width:660px;margin-bottom:14px
+  font-size:12.5px;line-height:1.45;color:var(--text-mid);
+  max-width:660px;margin-bottom:10px
 }
 
 /* ===== CONCEITO ===== */
 #conceito{background:var(--white)}
 .conceito-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px
 }
 .c-card{
-  background:var(--green-pale);border-radius:14px;
-  padding:18px 16px;border-top:4px solid var(--green-mid);
+  background:var(--green-pale);border-radius:12px;
+  padding:14px 14px;border-top:3px solid var(--green-mid);
   transition:all .6s cubic-bezier(.22,.68,0,1.21);
   opacity:0;transform:translateY(28px)
 }
 .c-card.in{opacity:1;transform:translateY(0)}
-.c-card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(26,74,46,.15)}
-.c-icon{font-size:30px;margin-bottom:10px;display:block}
-.c-card h3{font-size:15px;font-weight:700;color:var(--green-dark);margin-bottom:6px}
-.c-card p{font-size:13px;line-height:1.55;color:var(--text-mid)}
+.c-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,74,46,.15)}
+.c-icon{font-size:22px;margin-bottom:6px;display:block}
+.c-card h3{font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:4px}
+.c-card p{font-size:12px;line-height:1.45;color:var(--text-mid)}
 
 /* ===== PONTUAÇÃO ===== */
 #pontuacao{background:var(--bg-dark);color:white}
@@ -345,25 +345,25 @@ nav{
 .pts-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:8px;margin-bottom:16px
+  gap:6px;margin-bottom:6px
 }
 .pt-card{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;padding:14px 10px;text-align:center;
+  border-radius:10px;padding:10px 8px;text-align:center;
   transition:all .4s;opacity:0;transform:scale(.88)
 }
 .pt-card.in{opacity:1;transform:scale(1)}
 .pt-card:hover{
   background:rgba(227,82,5,.12);
-  border-color:var(--orange);transform:translateY(-4px)
+  border-color:var(--orange);transform:translateY(-3px)
 }
 .pt-val{
-  font-size:32px;font-weight:900;color:var(--orange);
-  line-height:1;margin-bottom:5px
+  font-size:22px;font-weight:900;color:var(--orange);
+  line-height:1;margin-bottom:3px
 }
-.pt-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
-.pt-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px}
+.pt-name{font-size:10px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
+.pt-sub{font-size:9px;color:rgba(255,255,255,.4);margin-top:2px}
 .pt-card.wide{grid-column:span 2}
 .code-bar{
   background:rgba(0,0,0,.45);
@@ -384,19 +384,19 @@ nav{
 #praticas{background:#f5f8f6}
 .prat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .p-card{
-  background:white;border-radius:14px;padding:36px 28px;
+  background:white;border-radius:12px;padding:16px 18px;
   border-left:4px solid var(--orange);
-  box-shadow:0 4px 24px rgba(0,0,0,.06);
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
   opacity:0;transform:translateX(-24px);transition:all .6s
 }
 .p-card.in{opacity:1;transform:translateX(0)}
-.p-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.12);transform:translateX(6px) !important}
-.p-step{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:12px}
-.p-card h3{font-size:17px;font-weight:700;margin-bottom:14px}
+.p-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.12);transform:translateX(4px) !important}
+.p-step{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:6px}
+.p-card h3{font-size:14px;font-weight:700;margin-bottom:8px}
 .p-card ul{list-style:none}
 .p-card ul li{
-  font-size:14px;color:var(--text-mid);line-height:1.6;
-  padding:5px 0 5px 18px;position:relative
+  font-size:12.5px;color:var(--text-mid);line-height:1.5;
+  padding:3px 0 3px 16px;position:relative
 }
 .p-card ul li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:12px;top:6px}
 
@@ -408,26 +408,26 @@ nav{
   border-radius:18px;padding:28px 28px;text-align:center;color:white;
   box-shadow:0 32px 80px rgba(26,74,46,.35)
 }
-.pros-big{font-size:clamp(48px,6vw,80px);font-weight:900;color:var(--orange);line-height:1}
-.pros-sub{font-size:15px;color:rgba(255,255,255,.6);margin-top:8px;margin-bottom:32px}
-.bant-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px}
+.pros-big{font-size:clamp(36px,4.5vw,60px);font-weight:900;color:var(--orange);line-height:1}
+.pros-sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:5px;margin-bottom:12px}
+.bant-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
 .bant-tag{
   background:rgba(227,82,5,.15);color:#ff7033;
-  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700
+  padding:3px 10px;border-radius:16px;font-size:11px;font-weight:700
 }
-.status-list{list-style:none;margin-top:32px}
+.status-list{list-style:none;margin-top:10px}
 .status-list li{
-  display:flex;align-items:center;gap:14px;
-  font-size:15px;color:var(--text-mid);
-  padding:11px 0;border-bottom:1px solid #f2f2f2
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;color:var(--text-mid);
+  padding:5px 0;border-bottom:1px solid #f2f2f2
 }
-.s-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.s-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .d-green{background:var(--green-mid)}
 .d-red{background:#cc3333}
 .d-yellow{background:#e09010}
 .d-gray{background:#aaa}
 .d-orange{background:var(--orange)}
-.pros-disclaimer{margin-top:20px;font-size:13px;color:var(--text-light);font-style:italic}
+.pros-disclaimer{margin-top:8px;font-size:11px;color:var(--text-light);font-style:italic}
 
 /* ===== PREMIAÇÃO ===== */
 #premiacao{background:var(--bg-hero);color:white;position:relative;overflow:hidden}
@@ -444,26 +444,27 @@ nav{
 /* ===== PRIZE CARDS — Full-photo overlay style ===== */
 .a-card{
   border-radius:12px;overflow:hidden;position:relative;
-  height:138px;background:#050d08;
+  height:148px;background:#111a12;
   opacity:0;transform:translateY(20px);transition:all .5s;cursor:default
 }
 .a-card.in{opacity:1;transform:translateY(0)}
 .a-card.gold{
-  height:155px;
+  height:165px;
   border:1.5px solid rgba(227,82,5,.7);
-  box-shadow:0 6px 28px rgba(227,82,5,.35)
+  box-shadow:0 8px 32px rgba(227,82,5,.4)
 }
-.a-card.silver{border:1px solid rgba(255,255,255,.2)}
-.a-card.bronze{border:1px solid rgba(205,127,50,.4)}
+.a-card.silver{border:1px solid rgba(255,255,255,.22)}
+.a-card.bronze{border:1px solid rgba(205,127,50,.45)}
 .a-card:hover{transform:scale(1.03) translateY(-4px) !important;z-index:3}
 
 /* Single photo fills entire card */
-.a-photo{position:absolute;inset:0;background:#050d08;overflow:hidden}
+.a-photo{position:absolute;inset:0;background:#111a12;overflow:hidden}
 .a-photo img{
-  width:100%;height:100%;object-fit:contain;display:block;padding:10px;
-  filter:brightness(1.18) saturate(1.05);transition:transform .5s,filter .3s
+  width:100%;height:100%;object-fit:contain;display:block;padding:4px;
+  filter:brightness(1.2) saturate(1.1) contrast(1.05);
+  transition:transform .5s,filter .3s
 }
-.a-card:hover .a-photo img{transform:scale(1.08);filter:brightness(1.28)}
+.a-card:hover .a-photo img{transform:scale(1.07);filter:brightness(1.35) saturate(1.15)}
 
 /* Gradient — photo visible at top, text readable at bottom */
 .a-photo-overlay{
@@ -795,7 +796,7 @@ footer{
   <h2 class="s-title fade-up">Sistema de Pontuação</h2>
   <p class="s-desc fade-up">As pontuações são <strong style="color:white">acumulativas</strong>. Quanto mais produtos e segmentos estratégicos, maior a pontuação do seu parceiro!</p>
 
-  <p style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px">Soluções — 3 pontos cada</p>
+  <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px">Soluções — 3 pontos cada</p>
   <div class="pts-grid">
     <div class="pt-card">
       <div class="pt-val">3</div>
@@ -824,7 +825,7 @@ footer{
     </div>
   </div>
 
-  <p style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin:32px 0 14px">Estrutura — pontuação por segmento</p>
+  <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin:8px 0 5px">Estrutura — pontuação por segmento</p>
   <div class="pts-grid">
     <div class="pt-card">
       <div class="pt-val">5</div>
@@ -906,9 +907,9 @@ footer{
   <div class="pros-wrap">
     <div class="fade-up">
       <p style="font-size:17px;color:#444;line-height:1.75;margin-bottom:32px">
-        A Thomson Reuters compartilha uma lista de empresas conforme a estratégia para o quarter, com foco em clusters selecionados para aumentar o Pipeline. O Call Blitz funciona como potencializador desse processo.
+        A Thomson Reuters compartilha uma lista de empresas com foco em clusters selecionados para aumentar o Pipeline.
       </p>
-      <p style="font-size:16px;font-weight:700;margin-bottom:18px;color:#111">Ao concluir, devolver a lista com o status de cada contato por empresa:</p>
+      <p style="font-size:13px;font-weight:700;margin-bottom:8px;color:#111">Ao concluir, devolver a lista com o status de cada contato por empresa:</p>
       <ul class="status-list">
         <li><span class="s-dot d-orange"></span>5 · Oportunidade Identificada</li>
         <li><span class="s-dot d-green"></span>1 · Empresa com interesse e sem critério de BANT</li>
@@ -1420,14 +1421,14 @@ window.addEventListener('scroll',()=>{
 
 const cuepoints=[
   {time:0.10,  id:'hero'},
-  {time:3.83,  id:'conceito'},
-  {time:19.71, id:'pontuacao'},
-  {time:38.99, id:'registro'},
-  {time:51.89, id:'praticas'},
-  {time:67.94, id:'prospects'},
-  {time:78.64, id:'premiacao'},
-  {time:95.85, id:'atencao'},
-  {time:103.21,id:'recados'},
+  {time:6.18,  id:'conceito'},
+  {time:16.30, id:'praticas'},
+  {time:28.55, id:'pontuacao'},
+  {time:35.54, id:'registro'},
+  {time:54.86, id:'prospects'},
+  {time:68.20, id:'premiacao'},
+  {time:93.45, id:'atencao'},
+  {time:109.52,id:'recados'},
 ];
 
 const narr=new Audio('assets/narration.mp3');
