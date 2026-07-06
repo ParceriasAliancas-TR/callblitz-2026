@@ -235,45 +235,45 @@ nav{
 }
 
 /* ===== REGISTRO DE OPORTUNIDADES ===== */
-.reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:8px}
+.reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:6px}
 .reg-card{
-  background:white;border-radius:14px;padding:18px 18px;
-  border-top:4px solid var(--green-mid);
+  background:white;border-radius:12px;padding:12px 14px;
+  border-top:3px solid var(--green-mid);
   box-shadow:0 4px 24px rgba(0,0,0,.06);
   transition:all .6s
 }
-.reg-card:hover{transform:translateY(-6px);box-shadow:0 20px 56px rgba(0,0,0,.1)}
+.reg-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.1)}
 .reg-num{
-  font-size:42px;font-weight:900;color:var(--orange);
-  opacity:.2;line-height:1;margin-bottom:16px
+  font-size:28px;font-weight:900;color:var(--orange);
+  opacity:.2;line-height:1;margin-bottom:8px
 }
-.reg-card h3{font-size:17px;font-weight:700;margin-bottom:12px;color:var(--text)}
-.reg-card p{font-size:14px;color:var(--text-mid);line-height:1.7}
+.reg-card h3{font-size:14px;font-weight:700;margin-bottom:6px;color:var(--text)}
+.reg-card p{font-size:12.5px;color:var(--text-mid);line-height:1.5}
 .reg-card p strong{color:var(--text)}
 
 /* ===== SF CODE BLOCK ===== */
 .sf-code-block{
-  display:flex;align-items:flex-start;gap:20px;
+  display:flex;align-items:flex-start;gap:14px;
   background:linear-gradient(135deg,#0d1a12,#1a2e1a);
   border:2px solid var(--orange);
-  border-radius:14px;padding:28px 32px;
-  margin-bottom:48px;
+  border-radius:12px;padding:16px 22px;
+  margin-bottom:0;
   box-shadow:0 8px 40px rgba(227,82,5,.2)
 }
-.sf-code-icon{font-size:32px;flex-shrink:0;margin-top:2px}
+.sf-code-icon{font-size:22px;flex-shrink:0;margin-top:2px}
 .sf-code-label{
-  font-size:11px;font-weight:700;letter-spacing:3px;
+  font-size:10px;font-weight:700;letter-spacing:3px;
   text-transform:uppercase;color:rgba(255,255,255,.5);
-  margin-bottom:10px
+  margin-bottom:6px
 }
 .sf-code-value{
   font-family:'Courier New',monospace;
-  font-size:18px;font-weight:700;
-  color:var(--orange);letter-spacing:1.5px;
-  margin-bottom:10px;word-break:break-all
+  font-size:15px;font-weight:700;
+  color:var(--orange);letter-spacing:1px;
+  margin-bottom:6px;word-break:break-all
 }
 .sf-code-note{
-  font-size:14px;color:rgba(255,255,255,.65);line-height:1.6
+  font-size:12px;color:rgba(255,255,255,.65);line-height:1.5
 }
 .sf-code-note strong{color:white}
 
@@ -299,18 +299,18 @@ nav{
 .audio-close{color:rgba(255,255,255,.35);font-size:14px}
 
 /* ===== SECTION BASE ===== */
-.section{padding:48px 88px}
+.section{padding:28px 88px}
 .s-label{
-  font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:8px
+  font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:6px
 }
 .s-title{
-  font-size:clamp(24px,3vw,42px);font-weight:900;line-height:1.05;
-  margin-bottom:10px;letter-spacing:-1.5px
+  font-size:clamp(20px,2.4vw,34px);font-weight:900;line-height:1.05;
+  margin-bottom:8px;letter-spacing:-1.2px
 }
 .s-desc{
-  font-size:15px;line-height:1.6;color:var(--text-mid);
-  max-width:660px;margin-bottom:24px
+  font-size:13.5px;line-height:1.5;color:var(--text-mid);
+  max-width:660px;margin-bottom:14px
 }
 
 /* ===== CONCEITO ===== */
@@ -426,11 +426,11 @@ nav{
 #premiacao .s-title{color:white}
 #premiacao .s-desc{color:rgba(255,255,255,.55)}
 .award-cat{
-  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--orange);margin:20px 0 12px;position:relative;z-index:2
+  font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin:10px 0 6px;position:relative;z-index:2
 }
 .award-cat:first-of-type{margin-top:0}
-.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative;z-index:2}
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;z-index:2}
 /* ===== PRIZE CARDS COM FOTO ===== */
 .a-card{
   border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
@@ -452,8 +452,8 @@ nav{
   border:1px solid rgba(205,127,50,.28)
 }
 /* Foto do prêmio */
-.a-photo{width:100%;height:150px;overflow:hidden;position:relative;flex-shrink:0;background:#0a130d}
-.a-card.gold .a-photo{height:168px}
+.a-photo{width:100%;height:100px;overflow:hidden;position:relative;flex-shrink:0;background:#0a130d}
+.a-card.gold .a-photo{height:112px}
 .a-photo img{
   width:100%;height:100%;object-fit:contain;display:block;
   filter:brightness(1.08) saturate(1.05);
@@ -491,10 +491,10 @@ nav{
 .silver-badge{background:rgba(200,200,200,.88);color:#222}
 .bronze-badge{background:rgba(205,127,50,.93);color:white}
 /* Corpo do card */
-.a-body{padding:10px 14px 12px;flex:1}
+.a-body{padding:6px 10px 8px;flex:1}
 .a-place{
-  font-size:10px;font-weight:800;letter-spacing:3px;
-  text-transform:uppercase;display:block;margin-bottom:6px
+  font-size:9px;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;display:block;margin-bottom:4px
 }
 .gold-place{color:var(--orange)}
 .silver-place{color:#aaa}
@@ -502,16 +502,16 @@ nav{
 /* Lista de prêmios */
 .a-prize-list{list-style:none;text-align:left}
 .a-prize-list li{
-  font-size:12px;color:rgba(255,255,255,.82);line-height:1.4;
-  padding:3px 0 3px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)
+  font-size:11px;color:rgba(255,255,255,.82);line-height:1.3;
+  padding:2px 0 2px 14px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)
 }
 .a-prize-list li:last-child{border-bottom:none}
 .a-prize-list li::before{
-  content:'';position:absolute;left:0;top:11px;
-  width:8px;height:8px;border-radius:50%;
+  content:'';position:absolute;left:0;top:8px;
+  width:7px;height:7px;border-radius:50%;
   background:var(--orange);opacity:.75
 }
-.a-prize-list li strong{color:white;display:block;font-size:13.5px}
+.a-prize-list li strong{color:white;display:block;font-size:12px}
 
 /* FLOATING PRIZES — SVG icons */
 .prize-bg{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
@@ -671,18 +671,14 @@ footer{
       Estratégia de Alto Impacto em<br>Geração de Demanda
     </p>
     <div class="hero-ctas">
-      <a href="#conceito" class="btn-hero primary">
-        Começar
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <button class="btn-hero primary" id="btn-narrate" onclick="toggleNarration()">
+        <span id="btn-narrate-label">Começar</span>
+        <svg id="btn-narrate-icon-play" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
-      </a>
-      <button class="btn-hero ghost" id="btn-narrate" onclick="toggleNarration()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
-          <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/>
+        <svg id="btn-narrate-icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>
         </svg>
-        Ouvir Apresentação
       </button>
     </div>
   </div>
@@ -691,12 +687,6 @@ footer{
 <!-- Auto-scroll progress bar -->
 <div class="autoscroll-bar"><div class="autoscroll-progress" id="asProg"></div></div>
 
-<!-- Audio float -->
-<div class="audio-float" id="audio-float" onclick="toggleNarration()">
-  <div class="audio-pulse" id="audio-pulse"></div>
-  <span class="audio-txt" id="audio-txt">Narração ativa</span>
-  <span class="audio-close">✕</span>
-</div>
 
 <!-- ============================
      CONCEITO
@@ -842,7 +832,7 @@ footer{
   </div>
 
   <!-- CÓDIGO SALESFORCE DESTAQUE -->
-  <div class="sf-code-block fade-up" style="margin-top:40px;margin-bottom:0">
+  <div class="sf-code-block fade-up" style="margin-top:12px">
     <div class="sf-code-icon">🔑</div>
     <div class="sf-code-body">
       <div class="sf-code-label">Código obrigatório · campo "Descrição" no Salesforce · antes de enviar para aprovação</div>
@@ -1492,19 +1482,18 @@ function toggleNarration(){
 }
 
 function updateAudioUI(on){
-  const fl=document.getElementById('audio-float');
-  const dot=document.getElementById('audio-pulse');
-  const txt=document.getElementById('audio-txt');
-  const btn=document.getElementById('btn-narrate');
+  const lbl=document.getElementById('btn-narrate-label');
+  const iPlay=document.getElementById('btn-narrate-icon-play');
+  const iPause=document.getElementById('btn-narrate-icon-pause');
+  if(!lbl) return;
   if(on){
-    fl.style.display='flex';
-    dot.classList.add('on');
-    txt.textContent='Áudio ativo · clique para pausar';
-    btn.innerHTML=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg> Pausar Narração`;
+    lbl.textContent='Pausar';
+    iPlay.style.display='none';
+    iPause.style.display='inline';
   } else {
-    fl.style.display='none';
-    dot.classList.remove('on');
-    btn.innerHTML=`<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg> Ouvir Apresentação`;
+    lbl.textContent='Começar';
+    iPlay.style.display='inline';
+    iPause.style.display='none';
   }
 }
 </script>
