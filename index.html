@@ -426,11 +426,11 @@ nav{
 #premiacao .s-title{color:white}
 #premiacao .s-desc{color:rgba(255,255,255,.55)}
 .award-cat{
-  font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--orange);margin:52px 0 24px;position:relative;z-index:2
+  font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--orange);margin:20px 0 12px;position:relative;z-index:2
 }
 .award-cat:first-of-type{margin-top:0}
-.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:2}
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;position:relative;z-index:2}
 /* ===== PRIZE CARDS COM FOTO ===== */
 .a-card{
   border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
@@ -452,8 +452,8 @@ nav{
   border:1px solid rgba(205,127,50,.28)
 }
 /* Foto do prêmio */
-.a-photo{width:100%;height:145px;overflow:hidden;position:relative;flex-shrink:0}
-.a-card.gold .a-photo{height:168px}
+.a-photo{width:100%;height:110px;overflow:hidden;position:relative;flex-shrink:0}
+.a-card.gold .a-photo{height:128px}
 .a-photo img{
   width:100%;height:100%;object-fit:cover;display:block;
   filter:brightness(.78) saturate(1.1);
@@ -485,10 +485,10 @@ nav{
 .silver-badge{background:rgba(200,200,200,.88);color:#222}
 .bronze-badge{background:rgba(205,127,50,.93);color:white}
 /* Corpo do card */
-.a-body{padding:16px 18px 20px;flex:1}
+.a-body{padding:10px 14px 12px;flex:1}
 .a-place{
   font-size:10px;font-weight:800;letter-spacing:3px;
-  text-transform:uppercase;display:block;margin-bottom:12px
+  text-transform:uppercase;display:block;margin-bottom:6px
 }
 .gold-place{color:var(--orange)}
 .silver-place{color:#aaa}
@@ -496,8 +496,8 @@ nav{
 /* Lista de prêmios */
 .a-prize-list{list-style:none;text-align:left}
 .a-prize-list li{
-  font-size:13px;color:rgba(255,255,255,.82);line-height:1.5;
-  padding:5px 0 5px 20px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)
+  font-size:12px;color:rgba(255,255,255,.82);line-height:1.4;
+  padding:3px 0 3px 18px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)
 }
 .a-prize-list li:last-child{border-bottom:none}
 .a-prize-list li::before{
@@ -1433,8 +1433,15 @@ function toggleNarration(){
 
     function trySpeak(){
       const voices=synth.getVoices();
-      const v=voices.find(v=>v.lang.startsWith('pt-BR')&&!v.name.includes('Compact'))||
-              voices.find(v=>v.lang.startsWith('pt'))||null;
+      // Prioridade: Microsoft Neural (Online) > Google > qualquer pt-BR
+      const v=
+        voices.find(v=>v.name.includes('Francisca')&&v.name.includes('Natural'))||
+        voices.find(v=>v.name.includes('Francisca'))||
+        voices.find(v=>v.name.includes('Leticia')&&v.name.includes('Natural'))||
+        voices.find(v=>v.name.toLowerCase().includes('google')&&v.lang.startsWith('pt-BR'))||
+        voices.find(v=>v.lang.startsWith('pt-BR')&&v.name.includes('Online'))||
+        voices.find(v=>v.lang.startsWith('pt-BR')&&!v.name.includes('Compact'))||
+        voices.find(v=>v.lang.startsWith('pt'))||null;
       if(v) utt.voice=v;
       synth.speak(utt);
     }
