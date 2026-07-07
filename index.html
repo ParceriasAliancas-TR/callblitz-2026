@@ -469,6 +469,13 @@ nav{
 .a-card.silver{border:1px solid rgba(255,255,255,.22)}
 .a-card.bronze{border:1px solid rgba(205,127,50,.45)}
 .a-card:hover{transform:scale(1.03) translateY(-4px) !important;z-index:3}
+.a-card.award-highlight{
+  transform:scale(1.06) translateY(-8px) !important;
+  z-index:4;
+  box-shadow:0 0 40px rgba(227,82,5,.85),0 12px 40px rgba(0,0,0,.3) !important;
+  border:2px solid var(--orange) !important;
+  transition:transform .35s ease,box-shadow .35s ease,border .35s ease !important;
+}
 
 /* Single photo fills entire card */
 .a-photo{position:absolute;inset:0;background:#bfc5bf;overflow:hidden}
@@ -983,7 +990,7 @@ footer{
   <p class="award-cat">⭐ Leads Qualificados · 25%</p>
   <div class="podium">
 
-    <div class="a-card gold">
+    <div class="a-card gold" data-award="lq1">
       <div class="a-photo">
         <img src="2026/Fotos/Tela%20_%20Trofeu%20%2B%20Mochila.png" alt="Tela Portátil, Troféu e Mochila TR" loading="lazy"/>
         <div class="a-photo-overlay"></div>
@@ -999,7 +1006,7 @@ footer{
       </div>
     </div>
 
-    <div class="a-card silver">
+    <div class="a-card silver" data-award="lq2">
       <div class="a-photo">
         <img src="2026/Fotos/Mouse%20mousepad%20medalha.png" alt="Mouse sem fio, Mousepad e Medalha" loading="lazy"/>
         <div class="a-photo-overlay"></div>
@@ -1015,7 +1022,7 @@ footer{
       </div>
     </div>
 
-    <div class="a-card bronze">
+    <div class="a-card bronze" data-award="lq3">
       <div class="a-photo">
         <img src="2026/Fotos/caneca%20medalha.png" alt="Caneca Térmica e Medalha" loading="lazy"/>
         <div class="a-photo-overlay"></div>
@@ -1035,7 +1042,7 @@ footer{
   <p class="award-cat">📊 Leads Gerados · Quantidade Total</p>
   <div class="podium">
 
-    <div class="a-card gold">
+    <div class="a-card gold" data-award="lg1">
       <div class="a-photo">
         <img src="2026/Fotos/mochila%20so.png" alt="Mochila Thomson Reuters" loading="lazy"/>
         <div class="a-photo-overlay"></div>
@@ -1049,9 +1056,9 @@ footer{
       </div>
     </div>
 
-    <div class="a-card silver">
+    <div class="a-card silver" data-award="lg2">
       <div class="a-photo">
-        <img src="2026/Fotos/Mouse%20pad4_.jpg" alt="Mouse sem fio e Mousepad" loading="lazy"/>
+        <img src="2026/Fotos/mause%20e%20mouse%20pad.png" alt="Mouse sem fio e Mousepad" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge silver-badge">2</div>
@@ -1064,7 +1071,7 @@ footer{
       </div>
     </div>
 
-    <div class="a-card bronze">
+    <div class="a-card bronze" data-award="lg3">
       <div class="a-photo">
         <img src="2026/Fotos/caneca.png" alt="Caneca Térmica" loading="lazy"/>
         <div class="a-photo-overlay"></div>
@@ -1440,8 +1447,13 @@ function _scheduleCues(){
   cuepoints.forEach(cp=>{
     const delay=(cp.time-now)*1000;
     if(delay>50){
-      _cueTimers.push(setTimeout(()=>{ _scrollTo(cp.id); }, delay));
+      _cueTimers.push(setTimeout(()=>{
+        _scrollTo(cp.id);
+        if(cp.id==='premiacao') _scheduleAwardHighlights();
+      }, delay));
     }
+    // Se já está no slide premiacao, dispara imediatamente
+    if(cp.id==='premiacao' && delay<=50 && delay>-1000) _scheduleAwardHighlights();
   });
 }
 
@@ -1452,9 +1464,35 @@ narr.onplay=()=>{
 };
 narr.onpause=()=>{
   _clearCues();
+  _clearAward();
+  document.querySelectorAll('.award-highlight').forEach(el=>el.classList.remove('award-highlight'));
   updateAudioUI(false);
   if(window._scroll) window._scroll.resume();
 };
+// Animação de destaque dos cards sincronizada com a narração de premiação
+let _awardTimers=[];
+function _clearAward(){ _awardTimers.forEach(t=>clearTimeout(t)); _awardTimers=[]; }
+function _scheduleAwardHighlights(){
+  _clearAward();
+  // Tempos relativos ao cuepoint premiacao (68s): cada prêmio mencionado na locução
+  const seq=[
+    {award:'lq1', delay:4200,  dur:2800},  // "primeiro lugar leva Tela Portátil..."
+    {award:'lq2', delay:9500,  dur:2500},  // "Segundo lugar, Mouse sem fio..."
+    {award:'lq3', delay:13200, dur:2200},  // "Terceiro, Caneca Térmica..."
+    {award:'lg1', delay:17000, dur:2500},  // "primeiro lugar ganhará uma Mochila..."
+    {award:'lg2', delay:20800, dur:2300},  // "Segundo lugar, Mouse sem fio..."
+    {award:'lg3', delay:24000, dur:2500},  // "terceiro lugar no ranking..."
+  ];
+  seq.forEach(({award,delay,dur})=>{
+    _awardTimers.push(setTimeout(()=>{
+      const el=document.querySelector(`[data-award="${award}"]`);
+      if(!el) return;
+      el.classList.add('award-highlight');
+      _awardTimers.push(setTimeout(()=>el.classList.remove('award-highlight'), dur));
+    }, delay));
+  });
+}
+
 narr.onended=()=>{
   _clearCues();
   narr.currentTime=0;
