@@ -304,7 +304,7 @@ nav{
   box-sizing:border-box;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
+  justify-content:center;
   padding:84px 88px 16px;
   overflow:hidden
 }
@@ -452,17 +452,17 @@ nav{
   display:flex;align-items:center;gap:6px
 }
 .award-cat:first-of-type{margin-top:0}
-.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;z-index:2}
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:2;max-width:1140px}
 
 /* ===== PRIZE CARDS — Full-photo overlay style ===== */
 .a-card{
   border-radius:12px;overflow:hidden;position:relative;
-  height:148px;background:#111a12;
+  height:210px;background:#111a12;
   opacity:0;transform:translateY(20px);transition:all .5s;cursor:default
 }
 .a-card.in{opacity:1;transform:translateY(0)}
 .a-card.gold{
-  height:165px;
+  height:230px;
   border:1.5px solid rgba(227,82,5,.7);
   box-shadow:0 8px 32px rgba(227,82,5,.4)
 }
@@ -471,10 +471,9 @@ nav{
 .a-card:hover{transform:scale(1.03) translateY(-4px) !important;z-index:3}
 
 /* Single photo fills entire card */
-.a-photo{position:absolute;inset:0;background:#111a12;overflow:hidden}
+.a-photo{position:absolute;inset:0;background:#1e2820;overflow:hidden}
 .a-photo img{
-  width:100%;height:100%;object-fit:contain;display:block;padding:4px;
-  filter:brightness(1.2) saturate(1.1) contrast(1.05);
+  width:100%;height:100%;object-fit:contain;display:block;padding:6px;
   transition:transform .5s,filter .3s
 }
 .a-card:hover .a-photo img{transform:scale(1.07);filter:brightness(1.35) saturate(1.15)}
@@ -986,7 +985,7 @@ footer{
 
     <div class="a-card gold">
       <div class="a-photo">
-        <img src="2026/Fotos/Tela%20_%20Trofeu%20%2B%20Mochila.png" alt="Tela Portátil, Troféu e Mochila TR" loading="lazy" style="object-fit:cover"/>
+        <img src="2026/Fotos/Tela%20_%20Trofeu%20%2B%20Mochila.png" alt="Tela Portátil, Troféu e Mochila TR" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge gold-badge">1</div>
@@ -1002,7 +1001,7 @@ footer{
 
     <div class="a-card silver">
       <div class="a-photo">
-        <img src="2026/Fotos/Mouse%20mousepad%20medalha.png" alt="Mouse sem fio, Mousepad e Medalha" loading="lazy" style="object-fit:cover"/>
+        <img src="2026/Fotos/Mouse%20mousepad%20medalha.png" alt="Mouse sem fio, Mousepad e Medalha" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge silver-badge">2</div>
@@ -1018,7 +1017,7 @@ footer{
 
     <div class="a-card bronze">
       <div class="a-photo">
-        <img src="2026/Fotos/caneca%20medalha.png" alt="Caneca Térmica e Medalha" loading="lazy" style="object-fit:cover"/>
+        <img src="2026/Fotos/caneca%20medalha.png" alt="Caneca Térmica e Medalha" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge bronze-badge">3</div>
@@ -1038,7 +1037,7 @@ footer{
 
     <div class="a-card gold">
       <div class="a-photo">
-        <img src="2026/Fotos/mochila%20so.png" alt="Mochila Thomson Reuters" loading="lazy" style="object-fit:cover"/>
+        <img src="2026/Fotos/mochila%20so.png" alt="Mochila Thomson Reuters" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge gold-badge">1</div>
@@ -1052,7 +1051,7 @@ footer{
 
     <div class="a-card silver">
       <div class="a-photo">
-        <img src="2026/Fotos/Mouse%20pad4_.jpg" alt="Mouse sem fio e Mousepad" loading="lazy" style="object-fit:cover"/>
+        <img src="2026/Fotos/Mouse%20pad4_.jpg" alt="Mouse sem fio e Mousepad" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge silver-badge">2</div>
@@ -1067,7 +1066,7 @@ footer{
 
     <div class="a-card bronze">
       <div class="a-photo">
-        <img src="2026/Fotos/caneca.png" alt="Caneca Térmica" loading="lazy" style="object-fit:contain"/>
+        <img src="2026/Fotos/caneca.png" alt="Caneca Térmica" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge bronze-badge">3</div>
