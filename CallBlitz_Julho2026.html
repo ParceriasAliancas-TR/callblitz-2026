@@ -479,10 +479,19 @@ nav{
 }
 .a-card:hover .a-photo img{transform:scale(1.07);filter:brightness(1.35) saturate(1.15)}
 
-/* Two-photo split layout (ex: mouse + mousepad) */
+/* Two-photo split */
 .a-photo-split{position:absolute;inset:0;background:#111a12;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:2px}
 .a-photo-split img{width:100%;height:100%;object-fit:contain;display:block;padding:4px;filter:brightness(1.2) saturate(1.1) contrast(1.05);transition:transform .5s,filter .3s}
 .a-card:hover .a-photo-split img{transform:scale(1.05);filter:brightness(1.35) saturate(1.15)}
+/* Three-photo split */
+.a-photo-split3{position:absolute;inset:0;background:#111a12;overflow:hidden;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px}
+.a-photo-split3 img{width:100%;height:100%;object-fit:contain;display:block;padding:4px;filter:brightness(1.2) saturate(1.1) contrast(1.05);transition:transform .5s,filter .3s}
+.a-card:hover .a-photo-split3 img{transform:scale(1.04);filter:brightness(1.35) saturate(1.15)}
+/* Hero layout: 1 main (left tall) + 2 stacked (right) */
+.a-photo-hero{position:absolute;inset:0;background:#111a12;overflow:hidden;display:grid;grid-template-columns:3fr 2fr;grid-template-rows:1fr 1fr;gap:2px}
+.a-photo-hero img{width:100%;height:100%;object-fit:contain;display:block;padding:4px;filter:brightness(1.2) saturate(1.1) contrast(1.05);transition:transform .5s,filter .3s}
+.a-photo-hero img:first-child{grid-row:1/3}
+.a-card:hover .a-photo-hero img{transform:scale(1.04);filter:brightness(1.35) saturate(1.15)}
 
 /* Gradient — photo visible at top, text readable at bottom */
 .a-photo-overlay{
@@ -976,8 +985,10 @@ footer{
   <div class="podium">
 
     <div class="a-card gold">
-      <div class="a-photo">
+      <div class="a-photo-hero">
         <img src="2026/Fotos/Trofeu.jpg" alt="Troféu Call Blitz" loading="lazy"/>
+        <img src="2026/Fotos/monitor_portatil.jpg" alt="Tela Portátil" loading="lazy"/>
+        <img src="2026/Fotos/mochila_notebook_lateral.webp" alt="Mochila TR" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge gold-badge">1</div>
@@ -992,9 +1003,10 @@ footer{
     </div>
 
     <div class="a-card silver">
-      <div class="a-photo-split">
+      <div class="a-photo-split3">
         <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
         <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad" loading="lazy"/>
+        <img src="2026/Fotos/medalhas.webp" alt="Medalha" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge silver-badge">2</div>
@@ -1009,8 +1021,9 @@ footer{
     </div>
 
     <div class="a-card bronze">
-      <div class="a-photo">
+      <div class="a-photo-split">
         <img src="2026/Fotos/caneca_termica.webp" alt="Caneca Térmica" loading="lazy"/>
+        <img src="2026/Fotos/medalhas.webp" alt="Medalha" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge bronze-badge">3</div>
@@ -1454,6 +1467,7 @@ narr.onended=()=>{
   narr.currentTime=0;
   updateAudioUI(false);
   if(window._scroll) window._scroll.resume();
+  setTimeout(()=>_scrollTo('target'), 1000);
 };
 narr.onseeked=()=>{ if(!narr.paused) _scheduleCues(); };
 narr.onerror=()=>updateAudioUI(false);
