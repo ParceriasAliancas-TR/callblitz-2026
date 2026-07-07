@@ -358,6 +358,19 @@ nav{
   background:rgba(227,82,5,.12);
   border-color:var(--orange);transform:translateY(-3px)
 }
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.info-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  border-left:3px solid var(--orange);
+  border-radius:10px;padding:16px 18px;
+  opacity:0;transform:translateY(20px);transition:all .5s
+}
+.info-card.in{opacity:1;transform:translateY(0)}
+.info-card:hover{background:rgba(227,82,5,.08);border-left-color:var(--orange);transform:translateY(-3px)}
+.info-card .ic-icon{font-size:22px;margin-bottom:8px;display:block}
+.info-card h3{font-size:13px;font-weight:700;color:white;margin-bottom:6px;letter-spacing:.3px}
+.info-card p{font-size:12px;line-height:1.55;color:rgba(255,255,255,.55)}
 .pt-val{
   font-size:22px;font-weight:900;color:var(--orange);
   line-height:1;margin-bottom:3px
@@ -801,6 +814,23 @@ footer{
   <h2 class="s-title fade-up">Sistema de Pontuação</h2>
   <p class="s-desc fade-up">As pontuações são <strong style="color:white">acumulativas</strong>. Quanto mais produtos e segmentos estratégicos, maior a pontuação do seu parceiro!</p>
 
+  <div class="info-grid">
+    <div class="info-card">
+      <span class="ic-icon">🎯</span>
+      <h3>Soluções em Destaque por Edição</h3>
+      <p>A cada Call Blitz, determinadas soluções recebem destaque especial. Elas refletem as prioridades comerciais do período — fique atento à lista atualizada de cada edição.</p>
+    </div>
+    <div class="info-card">
+      <span class="ic-icon">📊</span>
+      <h3>Segmentos que Fazem a Diferença</h3>
+      <p>Os segmentos estratégicos variam a cada edição. Prospectar nos segmentos certos significa maior pontuação e maior alinhamento com o foco da Thomson Reuters.</p>
+    </div>
+    <div class="info-card">
+      <span class="ic-icon">📅</span>
+      <h3>Portfólio Ativo o Mês Todo</h3>
+      <p>Além do Call Blitz, todo o portfólio Thomson Reuters está disponível para prospecção contínua. Cada oportunidade gerada durante o mês conta para o seu resultado.</p>
+    </div>
+  </div>
 
 </section>
 
@@ -1243,7 +1273,7 @@ const io = new IntersectionObserver((entries)=>{
 },{threshold:.14});
 
 document.querySelectorAll(
-  '.fade-up,.c-card,.pt-card,.p-card,.a-card,.at-card,.rec-item,.code-bar'
+  '.fade-up,.c-card,.pt-card,.p-card,.a-card,.at-card,.rec-item,.code-bar,.info-card'
 ).forEach((el,i)=>{
   io.observe(el);
 });
