@@ -299,36 +299,44 @@ nav{
 .audio-close{color:rgba(255,255,255,.35);font-size:14px}
 
 /* ===== SECTION BASE ===== */
-.section{padding:28px 88px}
+.section{
+  height:100vh;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  padding:84px 88px 16px;
+  overflow:hidden
+}
 .s-label{
-  font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
-  color:var(--orange);margin-bottom:6px
+  font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;
+  color:var(--orange);margin-bottom:4px
 }
 .s-title{
-  font-size:clamp(20px,2.4vw,34px);font-weight:900;line-height:1.05;
-  margin-bottom:8px;letter-spacing:-1.2px
+  font-size:clamp(18px,2.2vw,30px);font-weight:900;line-height:1.05;
+  margin-bottom:5px;letter-spacing:-1px
 }
 .s-desc{
-  font-size:13.5px;line-height:1.5;color:var(--text-mid);
-  max-width:660px;margin-bottom:14px
+  font-size:12.5px;line-height:1.45;color:var(--text-mid);
+  max-width:660px;margin-bottom:10px
 }
 
 /* ===== CONCEITO ===== */
 #conceito{background:var(--white)}
 .conceito-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px
 }
 .c-card{
-  background:var(--green-pale);border-radius:14px;
-  padding:18px 16px;border-top:4px solid var(--green-mid);
+  background:var(--green-pale);border-radius:12px;
+  padding:14px 14px;border-top:3px solid var(--green-mid);
   transition:all .6s cubic-bezier(.22,.68,0,1.21);
   opacity:0;transform:translateY(28px)
 }
 .c-card.in{opacity:1;transform:translateY(0)}
-.c-card:hover{transform:translateY(-8px);box-shadow:0 24px 64px rgba(26,74,46,.15)}
-.c-icon{font-size:30px;margin-bottom:10px;display:block}
-.c-card h3{font-size:15px;font-weight:700;color:var(--green-dark);margin-bottom:6px}
-.c-card p{font-size:13px;line-height:1.55;color:var(--text-mid)}
+.c-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(26,74,46,.15)}
+.c-icon{font-size:22px;margin-bottom:6px;display:block}
+.c-card h3{font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:4px}
+.c-card p{font-size:12px;line-height:1.45;color:var(--text-mid)}
 
 /* ===== PONTUAÇÃO ===== */
 #pontuacao{background:var(--bg-dark);color:white}
@@ -337,25 +345,25 @@ nav{
 .pts-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:8px;margin-bottom:16px
+  gap:6px;margin-bottom:6px
 }
 .pt-card{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:12px;padding:14px 10px;text-align:center;
+  border-radius:10px;padding:10px 8px;text-align:center;
   transition:all .4s;opacity:0;transform:scale(.88)
 }
 .pt-card.in{opacity:1;transform:scale(1)}
 .pt-card:hover{
   background:rgba(227,82,5,.12);
-  border-color:var(--orange);transform:translateY(-4px)
+  border-color:var(--orange);transform:translateY(-3px)
 }
 .pt-val{
-  font-size:32px;font-weight:900;color:var(--orange);
-  line-height:1;margin-bottom:5px
+  font-size:22px;font-weight:900;color:var(--orange);
+  line-height:1;margin-bottom:3px
 }
-.pt-name{font-size:11px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
-.pt-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:3px}
+.pt-name{font-size:10px;font-weight:700;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:.5px}
+.pt-sub{font-size:9px;color:rgba(255,255,255,.4);margin-top:2px}
 .pt-card.wide{grid-column:span 2}
 .code-bar{
   background:rgba(0,0,0,.45);
@@ -376,50 +384,50 @@ nav{
 #praticas{background:#f5f8f6}
 .prat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .p-card{
-  background:white;border-radius:14px;padding:36px 28px;
+  background:white;border-radius:12px;padding:16px 18px;
   border-left:4px solid var(--orange);
-  box-shadow:0 4px 24px rgba(0,0,0,.06);
+  box-shadow:0 4px 18px rgba(0,0,0,.06);
   opacity:0;transform:translateX(-24px);transition:all .6s
 }
 .p-card.in{opacity:1;transform:translateX(0)}
-.p-card:hover{box-shadow:0 16px 48px rgba(0,0,0,.12);transform:translateX(6px) !important}
-.p-step{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:12px}
-.p-card h3{font-size:17px;font-weight:700;margin-bottom:14px}
+.p-card:hover{box-shadow:0 12px 36px rgba(0,0,0,.12);transform:translateX(4px) !important}
+.p-step{font-size:9px;font-weight:700;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:6px}
+.p-card h3{font-size:14px;font-weight:700;margin-bottom:8px}
 .p-card ul{list-style:none}
 .p-card ul li{
-  font-size:14px;color:var(--text-mid);line-height:1.6;
-  padding:5px 0 5px 18px;position:relative
+  font-size:12.5px;color:var(--text-mid);line-height:1.5;
+  padding:3px 0 3px 16px;position:relative
 }
 .p-card ul li::before{content:'→';position:absolute;left:0;color:var(--orange);font-size:12px;top:6px}
 
 /* ===== PROSPECTS ===== */
 #prospects{background:white}
-.pros-wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.pros-wrap{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
 .pros-visual{
   background:linear-gradient(135deg,var(--green-dark) 0%,#0f2e1c 100%);
-  border-radius:18px;padding:52px 40px;text-align:center;color:white;
+  border-radius:18px;padding:28px 28px;text-align:center;color:white;
   box-shadow:0 32px 80px rgba(26,74,46,.35)
 }
-.pros-big{font-size:clamp(48px,6vw,80px);font-weight:900;color:var(--orange);line-height:1}
-.pros-sub{font-size:15px;color:rgba(255,255,255,.6);margin-top:8px;margin-bottom:32px}
-.bant-tags{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px}
+.pros-big{font-size:clamp(36px,4.5vw,60px);font-weight:900;color:var(--orange);line-height:1}
+.pros-sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:5px;margin-bottom:12px}
+.bant-tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin-bottom:12px}
 .bant-tag{
   background:rgba(227,82,5,.15);color:#ff7033;
-  padding:5px 14px;border-radius:20px;font-size:12px;font-weight:700
+  padding:3px 10px;border-radius:16px;font-size:11px;font-weight:700
 }
-.status-list{list-style:none;margin-top:32px}
+.status-list{list-style:none;margin-top:10px}
 .status-list li{
-  display:flex;align-items:center;gap:14px;
-  font-size:15px;color:var(--text-mid);
-  padding:11px 0;border-bottom:1px solid #f2f2f2
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;color:var(--text-mid);
+  padding:5px 0;border-bottom:1px solid #f2f2f2
 }
-.s-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.s-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .d-green{background:var(--green-mid)}
 .d-red{background:#cc3333}
 .d-yellow{background:#e09010}
 .d-gray{background:#aaa}
 .d-orange{background:var(--orange)}
-.pros-disclaimer{margin-top:20px;font-size:13px;color:var(--text-light);font-style:italic}
+.pros-disclaimer{margin-top:8px;font-size:11px;color:var(--text-light);font-style:italic}
 
 /* ===== PREMIAÇÃO ===== */
 #premiacao{background:var(--bg-hero);color:white;position:relative;overflow:hidden}
@@ -427,91 +435,74 @@ nav{
 #premiacao .s-desc{color:rgba(255,255,255,.55)}
 .award-cat{
   font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  color:var(--orange);margin:10px 0 6px;position:relative;z-index:2
+  color:var(--orange);margin:10px 0 6px;position:relative;z-index:2;
+  display:flex;align-items:center;gap:6px
 }
 .award-cat:first-of-type{margin-top:0}
 .podium{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;z-index:2}
-/* ===== PRIZE CARDS COM FOTO ===== */
+
+/* ===== PRIZE CARDS — Full-photo overlay style ===== */
 .a-card{
-  border-radius:16px;overflow:hidden;display:flex;flex-direction:column;
-  opacity:0;transform:translateY(24px);transition:all .55s;cursor:default;
+  border-radius:12px;overflow:hidden;position:relative;
+  height:148px;background:#111a12;
+  opacity:0;transform:translateY(20px);transition:all .5s;cursor:default
 }
 .a-card.in{opacity:1;transform:translateY(0)}
-.a-card:hover{transform:translateY(-10px) scale(1.02) !important;z-index:3;position:relative}
 .a-card.gold{
-  background:linear-gradient(180deg,rgba(50,20,5,.96),rgba(10,22,14,.99));
-  border:1.5px solid rgba(227,82,5,.65);
-  box-shadow:0 8px 42px rgba(227,82,5,.28),inset 0 1px 0 rgba(255,255,255,.07)
+  height:165px;
+  border:1.5px solid rgba(227,82,5,.7);
+  box-shadow:0 8px 32px rgba(227,82,5,.4)
 }
-.a-card.silver{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,255,255,.15)
-}
-.a-card.bronze{
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(205,127,50,.28)
-}
-/* Foto do prêmio */
-.a-photo{width:100%;height:100px;overflow:hidden;position:relative;flex-shrink:0;background:#0a130d}
-.a-card.gold .a-photo{height:112px}
+.a-card.silver{border:1px solid rgba(255,255,255,.22)}
+.a-card.bronze{border:1px solid rgba(205,127,50,.45)}
+.a-card:hover{transform:scale(1.03) translateY(-4px) !important;z-index:3}
+
+/* Single photo fills entire card */
+.a-photo{position:absolute;inset:0;background:#111a12;overflow:hidden}
 .a-photo img{
-  width:100%;height:100%;object-fit:contain;display:block;
-  filter:brightness(1.08) saturate(1.05);
-  transition:transform .5s ease,filter .3s;
-  padding:6px
+  width:100%;height:100%;object-fit:contain;display:block;padding:4px;
+  filter:brightness(1.2) saturate(1.1) contrast(1.05);
+  transition:transform .5s,filter .3s
 }
-.a-card:hover .a-photo img{transform:scale(1.05);filter:brightness(1.18) saturate(1.12)}
-/* Multi-photo grid */
-.a-photo-grid{position:absolute;inset:0;display:grid;gap:3px;background:#0a130d}
-.a-photo-grid.g2{grid-template-columns:1fr 1fr}
-.a-photo-grid.g3{grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr}
-.a-photo-grid.g3>img:first-child{grid-row:1/3}
-.a-photo-grid img{
-  width:100%;height:100%;object-fit:contain;display:block;
-  filter:brightness(1.08) saturate(1.05);
-  transition:transform .5s ease,filter .3s;
-  padding:4px
-}
-.a-card:hover .a-photo-grid img{transform:scale(1.04);filter:brightness(1.18) saturate(1.12)}
+.a-card:hover .a-photo img{transform:scale(1.07);filter:brightness(1.35) saturate(1.15)}
+
+/* Gradient — photo visible at top, text readable at bottom */
 .a-photo-overlay{
   position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(0,0,0,.60) 0%,rgba(0,0,0,.1) 40%,transparent 70%)
+  background:linear-gradient(to top,rgba(0,0,0,.97) 0%,rgba(0,0,0,.8) 36%,rgba(0,0,0,.25) 62%,transparent 100%)
 }
-/* Número de posição flutuante */
+
+/* Rank badge — metallic gradient */
 .a-badge{
-  position:absolute;top:10px;right:10px;
-  width:36px;height:36px;border-radius:50%;
+  position:absolute;top:8px;right:8px;z-index:3;
+  width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  font-weight:900;font-size:15px;
-  border:2px solid rgba(255,255,255,.45);
-  backdrop-filter:blur(8px);
-  box-shadow:0 2px 16px rgba(0,0,0,.55)
+  font-weight:900;font-size:12px;box-shadow:0 2px 10px rgba(0,0,0,.7)
 }
-.gold-badge{background:rgba(255,215,0,.93);color:#222}
-.silver-badge{background:rgba(200,200,200,.88);color:#222}
-.bronze-badge{background:rgba(205,127,50,.93);color:white}
-/* Corpo do card */
-.a-body{padding:6px 10px 8px;flex:1}
+.gold-badge{background:linear-gradient(135deg,#FFD700,#e6a800);color:#111}
+.silver-badge{background:linear-gradient(135deg,#d4d4d4,#909090);color:#111}
+.bronze-badge{background:linear-gradient(135deg,#CD7F32,#9a5c1a);color:white}
+
+/* Prize info overlaid at bottom */
+.a-body{position:absolute;bottom:0;left:0;right:0;z-index:2;padding:7px 12px 9px}
 .a-place{
-  font-size:9px;font-weight:800;letter-spacing:3px;
+  font-size:8px;font-weight:800;letter-spacing:2.5px;
   text-transform:uppercase;display:block;margin-bottom:4px
 }
 .gold-place{color:var(--orange)}
-.silver-place{color:#aaa}
+.silver-place{color:#c0c0c0}
 .bronze-place{color:#CD7F32}
-/* Lista de prêmios */
-.a-prize-list{list-style:none;text-align:left}
+
+/* Prizes — inline with · separator */
+.a-prize-list{list-style:none;display:flex;flex-wrap:wrap;gap:0 4px;align-items:center}
 .a-prize-list li{
-  font-size:11px;color:rgba(255,255,255,.82);line-height:1.3;
-  padding:2px 0 2px 14px;position:relative;border-bottom:1px solid rgba(255,255,255,.06)
+  font-size:11px;color:rgba(255,255,255,.9);
+  line-height:1.5;white-space:nowrap;padding:0
 }
-.a-prize-list li:last-child{border-bottom:none}
-.a-prize-list li::before{
-  content:'';position:absolute;left:0;top:8px;
-  width:7px;height:7px;border-radius:50%;
-  background:var(--orange);opacity:.75
+.a-prize-list li:not(:last-child)::after{
+  content:'·';color:rgba(255,255,255,.35);margin-left:4px
 }
-.a-prize-list li strong{color:white;display:block;font-size:12px}
+.a-prize-list li strong{color:white;font-weight:600}
 
 /* FLOATING PRIZES — SVG icons */
 .prize-bg{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
@@ -551,31 +542,56 @@ nav{
   opacity:0;transform:translateY(22px);transition:all .55s
 }
 .at-card.in{opacity:1;transform:translateY(0)}
-.at-icon{font-size:28px;margin-bottom:10px}
-.at-card h3{font-size:15px;font-weight:700;margin-bottom:8px}
-.at-card p{font-size:13px;color:var(--text-mid);line-height:1.55}
+.at-icon{font-size:22px;margin-bottom:6px}
+.at-card h3{font-size:14px;font-weight:700;margin-bottom:5px}
+.at-card p{font-size:12px;color:var(--text-mid);line-height:1.5}
 .penalty{
   background:#fff0e8;border:2px solid var(--orange);
-  border-radius:8px;padding:14px 20px;margin-top:16px;
-  font-size:15px;font-weight:700;color:var(--orange)
+  border-radius:8px;padding:8px 14px;margin-top:10px;
+  font-size:13px;font-weight:700;color:var(--orange)
 }
 
 /* ===== RECADOS ===== */
 #recados{background:white}
-.rec-list{list-style:none;counter-reset:rec}
+.rec-list{list-style:none;counter-reset:rec;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
 .rec-item{
   counter-increment:rec;
-  display:flex;gap:20px;align-items:flex-start;
-  padding:14px 0;border-bottom:1px solid #f0f0f0;
+  display:flex;gap:14px;align-items:flex-start;
+  padding:9px 0;border-bottom:1px solid #f0f0f0;
   opacity:0;transform:translateX(-22px);transition:all .55s
 }
 .rec-item.in{opacity:1;transform:translateX(0)}
 .rec-num{
-  font-size:26px;font-weight:900;color:var(--orange);opacity:.25;
-  min-width:40px;line-height:1.1;flex-shrink:0
+  font-size:20px;font-weight:900;color:var(--orange);opacity:.25;
+  min-width:30px;line-height:1.1;flex-shrink:0
 }
-.rec-txt{font-size:14px;color:var(--text-mid);line-height:1.6;padding-top:3px}
+.rec-txt{font-size:12.5px;color:var(--text-mid);line-height:1.5;padding-top:2px}
 .rec-txt strong{color:var(--text)}
+
+/* ===== TARGET ABERTURA ===== */
+#target{
+  background:var(--bg-hero);color:white;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;gap:0;
+  height:100vh;box-sizing:border-box;overflow:hidden
+}
+.target-label{
+  font-size:10px;font-weight:700;letter-spacing:5px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin-bottom:18px
+}
+.target-title{
+  font-size:clamp(52px,8vw,96px);font-weight:900;line-height:1;
+  letter-spacing:-3px;color:var(--orange);margin:0 0 18px
+}
+.target-sub{
+  font-size:16px;color:rgba(255,255,255,.45);letter-spacing:1px;
+  text-transform:uppercase;font-weight:600
+}
+.target-line{
+  width:80px;height:3px;background:var(--orange);
+  border-radius:2px;margin:24px auto 0;opacity:.6
+}
 
 /* ===== FOOTER ===== */
 footer{
@@ -648,6 +664,7 @@ footer{
     <li><a href="#prospects">Prospects</a></li>
     <li><a href="#premiacao">Premiação</a></li>
     <li><a href="#recados">Recados</a></li>
+    <li><a href="#target">Abertura</a></li>
   </ul>
 </nav>
 
@@ -779,7 +796,7 @@ footer{
   <h2 class="s-title fade-up">Sistema de Pontuação</h2>
   <p class="s-desc fade-up">As pontuações são <strong style="color:white">acumulativas</strong>. Quanto mais produtos e segmentos estratégicos, maior a pontuação do seu parceiro!</p>
 
-  <p style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px">Soluções — 3 pontos cada</p>
+  <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:5px">Soluções — 3 pontos cada</p>
   <div class="pts-grid">
     <div class="pt-card">
       <div class="pt-val">3</div>
@@ -808,7 +825,7 @@ footer{
     </div>
   </div>
 
-  <p style="font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin:32px 0 14px">Estrutura — pontuação por segmento</p>
+  <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin:8px 0 5px">Estrutura — pontuação por segmento</p>
   <div class="pts-grid">
     <div class="pt-card">
       <div class="pt-val">5</div>
@@ -890,9 +907,9 @@ footer{
   <div class="pros-wrap">
     <div class="fade-up">
       <p style="font-size:17px;color:#444;line-height:1.75;margin-bottom:32px">
-        A Thomson Reuters compartilha uma lista de empresas conforme a estratégia para o quarter, com foco em clusters selecionados para aumentar o Pipeline. O Call Blitz funciona como potencializador desse processo.
+        A Thomson Reuters compartilha uma lista de empresas com foco em clusters selecionados para aumentar o Pipeline.
       </p>
-      <p style="font-size:16px;font-weight:700;margin-bottom:18px;color:#111">Ao concluir, devolver a lista com o status de cada contato por empresa:</p>
+      <p style="font-size:13px;font-weight:700;margin-bottom:8px;color:#111">Ao concluir, devolver a lista com o status de cada contato por empresa:</p>
       <ul class="status-list">
         <li><span class="s-dot d-orange"></span>5 · Oportunidade Identificada</li>
         <li><span class="s-dot d-green"></span>1 · Empresa com interesse e sem critério de BANT</li>
@@ -985,59 +1002,49 @@ footer{
   <p class="award-cat">⭐ Leads Qualificados · 25%</p>
   <div class="podium">
 
-    <!-- 1º lugar — troféu real TR -->
     <div class="a-card gold">
       <div class="a-photo">
-        <div class="a-photo-grid g3">
-          <img src="2026/Fotos/Trofeus/Image_web.jpg" alt="Troféu Call Blitz" loading="lazy"/>
-          <img src="2026/Fotos/monitor_portatil.jpg" alt="Monitor Portátil" loading="lazy"/>
-          <img src="2026/Fotos/mochila_notebook.webp" alt="Mochila Thomson Reuters" loading="lazy"/>
-        </div>
+        <img src="2026/Fotos/Trofeu.jpg" alt="Troféu Call Blitz" loading="lazy"/>
         <div class="a-photo-overlay"></div>
-        <div class="a-badge gold-badge">1</div>
       </div>
+      <div class="a-badge gold-badge">1</div>
       <div class="a-body">
         <span class="a-place gold-place">★ 1º Lugar</span>
         <ul class="a-prize-list">
-          <li><strong>01 Tela Portátil</strong></li>
-          <li><strong>01 Mochila Thomson Reuters</strong></li>
-          <li><strong>Troféu Call Blitz</strong></li>
+          <li>Tela Portátil</li>
+          <li>Mochila TR</li>
+          <li>Troféu</li>
         </ul>
       </div>
     </div>
 
-    <!-- 2º lugar -->
     <div class="a-card silver">
       <div class="a-photo">
-        <div class="a-photo-grid g2">
-          <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
-          <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad Ergonômico" loading="lazy"/>
-        </div>
+        <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mouse sem fio e Mousepad" loading="lazy"/>
         <div class="a-photo-overlay"></div>
-        <div class="a-badge silver-badge">2</div>
       </div>
+      <div class="a-badge silver-badge">2</div>
       <div class="a-body">
         <span class="a-place silver-place">2º Lugar</span>
         <ul class="a-prize-list">
-          <li><strong>01 Mouse sem fio</strong></li>
-          <li><strong>01 Mousepad</strong></li>
-          <li><strong>Medalha</strong></li>
+          <li>Mouse sem fio</li>
+          <li>Mousepad</li>
+          <li>Medalha</li>
         </ul>
       </div>
     </div>
 
-    <!-- 3º lugar -->
     <div class="a-card bronze">
       <div class="a-photo">
         <img src="2026/Fotos/caneca_termica.webp" alt="Caneca Térmica" loading="lazy"/>
         <div class="a-photo-overlay"></div>
-        <div class="a-badge bronze-badge">3</div>
       </div>
+      <div class="a-badge bronze-badge">3</div>
       <div class="a-body">
         <span class="a-place bronze-place">3º Lugar</span>
         <ul class="a-prize-list">
-          <li><strong>01 Caneca Térmica</strong></li>
-          <li><strong>Medalha</strong></li>
+          <li>Caneca Térmica</li>
+          <li>Medalha</li>
         </ul>
       </div>
     </div>
@@ -1047,51 +1054,45 @@ footer{
   <p class="award-cat">📊 Leads Gerados · Quantidade Total</p>
   <div class="podium">
 
-    <!-- 1º lugar — mochila -->
     <div class="a-card gold">
       <div class="a-photo">
-        <img src="2026/Fotos/mochila_notebook.webp" alt="Mochila Thomson Reuters" loading="lazy"/>
+        <img src="2026/Fotos/mochila_notebook_lateral.webp" alt="Mochila Thomson Reuters" loading="lazy"/>
         <div class="a-photo-overlay"></div>
-        <div class="a-badge gold-badge">1</div>
       </div>
+      <div class="a-badge gold-badge">1</div>
       <div class="a-body">
         <span class="a-place gold-place">★ 1º Lugar</span>
         <ul class="a-prize-list">
-          <li><strong>01 Mochila Thomson Reuters</strong></li>
+          <li>Mochila TR</li>
         </ul>
       </div>
     </div>
 
-    <!-- 2º lugar -->
     <div class="a-card silver">
       <div class="a-photo">
-        <div class="a-photo-grid g2">
-          <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
-          <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad Ergonômico" loading="lazy"/>
-        </div>
+        <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad Ergonômico" loading="lazy"/>
         <div class="a-photo-overlay"></div>
-        <div class="a-badge silver-badge">2</div>
       </div>
+      <div class="a-badge silver-badge">2</div>
       <div class="a-body">
         <span class="a-place silver-place">2º Lugar</span>
         <ul class="a-prize-list">
-          <li><strong>01 Mouse sem fio</strong></li>
-          <li><strong>01 Mousepad</strong></li>
+          <li>Mouse sem fio</li>
+          <li>Mousepad</li>
         </ul>
       </div>
     </div>
 
-    <!-- 3º lugar -->
     <div class="a-card bronze">
       <div class="a-photo">
-        <img src="2026/Fotos/caneca_termica.webp" alt="Caneca Térmica" loading="lazy"/>
+        <img src="2026/Fotos/caneca_termica_verde.jpg" alt="Caneca Térmica" loading="lazy"/>
         <div class="a-photo-overlay"></div>
-        <div class="a-badge bronze-badge">3</div>
       </div>
+      <div class="a-badge bronze-badge">3</div>
       <div class="a-body">
         <span class="a-place bronze-place">3º Lugar</span>
         <ul class="a-prize-list">
-          <li><strong>01 Caneca Térmica</strong></li>
+          <li>Caneca Térmica</li>
         </ul>
       </div>
     </div>
@@ -1168,6 +1169,16 @@ footer{
       <div class="rec-txt">Todas as oportunidades devem conter o <strong>BANT 2026 atualizado</strong>, disponível no Portal de Parceiros. Utilizar o modelo anterior pode acarretar em oportunidades canceladas</div>
     </li>
   </ul>
+</section>
+
+<!-- ============================
+     TARGET ABERTURA
+     ============================ -->
+<section id="target">
+  <p class="target-label">Ao vivo · Live Session</p>
+  <h2 class="target-title">Target<br>Abertura</h2>
+  <p class="target-sub">Apresentação em tempo real</p>
+  <div class="target-line"></div>
 </section>
 
 <!-- ============================
@@ -1327,7 +1338,8 @@ window.addEventListener('scroll',()=>{
     {id:'prospects', dwell:10000},
     {id:'premiacao', dwell:14000},
     {id:'atencao',   dwell:8000},
-    {id:'recados',   dwell:8000}
+    {id:'recados',   dwell:2500},
+    {id:'target',    dwell:99999}
   ];
   let idx=0, timer=null, progTimer=null, paused=false, lastManual=0;
 
@@ -1409,14 +1421,14 @@ window.addEventListener('scroll',()=>{
 
 const cuepoints=[
   {time:0.10,  id:'hero'},
-  {time:3.83,  id:'conceito'},
-  {time:19.71, id:'pontuacao'},
-  {time:38.99, id:'registro'},
-  {time:51.89, id:'praticas'},
-  {time:67.94, id:'prospects'},
-  {time:78.64, id:'premiacao'},
-  {time:95.85, id:'atencao'},
-  {time:103.21,id:'recados'},
+  {time:6.18,  id:'conceito'},
+  {time:16.30, id:'praticas'},
+  {time:28.55, id:'pontuacao'},
+  {time:35.54, id:'registro'},
+  {time:54.86, id:'prospects'},
+  {time:68.20, id:'premiacao'},
+  {time:93.45, id:'atencao'},
+  {time:109.52,id:'recados'},
 ];
 
 const narr=new Audio('assets/narration.mp3');
