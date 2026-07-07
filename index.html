@@ -466,6 +466,11 @@ nav{
 }
 .a-card:hover .a-photo img{transform:scale(1.07);filter:brightness(1.35) saturate(1.15)}
 
+/* Two-photo split layout (ex: mouse + mousepad) */
+.a-photo-split{position:absolute;inset:0;background:#111a12;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.a-photo-split img{width:100%;height:100%;object-fit:contain;display:block;padding:4px;filter:brightness(1.2) saturate(1.1) contrast(1.05);transition:transform .5s,filter .3s}
+.a-card:hover .a-photo-split img{transform:scale(1.05);filter:brightness(1.35) saturate(1.15)}
+
 /* Gradient — photo visible at top, text readable at bottom */
 .a-photo-overlay{
   position:absolute;inset:0;
@@ -1019,8 +1024,9 @@ footer{
     </div>
 
     <div class="a-card silver">
-      <div class="a-photo">
-        <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mouse sem fio e Mousepad" loading="lazy"/>
+      <div class="a-photo-split">
+        <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
+        <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge silver-badge">2</div>
@@ -1069,8 +1075,9 @@ footer{
     </div>
 
     <div class="a-card silver">
-      <div class="a-photo">
-        <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad Ergonômico" loading="lazy"/>
+      <div class="a-photo-split">
+        <img src="2026/Fotos/mouse_branco.jpg" alt="Mouse sem fio" loading="lazy"/>
+        <img src="2026/Fotos/mousepad_ergonomico.jpg" alt="Mousepad" loading="lazy"/>
         <div class="a-photo-overlay"></div>
       </div>
       <div class="a-badge silver-badge">2</div>
@@ -1427,8 +1434,8 @@ const cuepoints=[
   {time:35.54, id:'registro'},
   {time:54.86, id:'prospects'},
   {time:68.20, id:'premiacao'},
-  {time:93.45, id:'atencao'},
-  {time:109.52,id:'recados'},
+  {time:93.62, id:'atencao'},
+  {time:109.69,id:'recados'},
 ];
 
 const narr=new Audio('assets/narration.mp3');
